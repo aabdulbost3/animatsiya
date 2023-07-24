@@ -16,10 +16,12 @@ body {
     background-color: red;
     width: 20px;
     height: 20px;
-    animation-name: aylana;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+    /* animation-duration: 2s; */
     border-radius: 10px;
+    transition: 1s;
+    animation: mymove 1s infinite;
+    position: relative;
+    
 }
 
 .box {
@@ -27,17 +29,18 @@ body {
     width: 300px;
     height: 300px;
 }
+.box div {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
 
-@keyframes aylana {
-    0% {
-        transform: translateY(0px);
-    }
-
-    20% {
-        transform: translateX(160px);
-    }
-
-    40% {
-        transform: translateX(-100px);
-    }
+    @keyframes mymove {
+        0%   {top: -160px; bottom: 0px; }
+        25%  {top: 160px; right: 0px;}
+        50%  {top: 160px; right: 320px; }
+        75%  {bottom: 200px; top: -160px; right: 320px; }
+        100% {right: -0px; top: -160px; bottom:0px;}
+      
 }
